@@ -4,10 +4,28 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shtark Studio — Apps. ASIC Mining. Performance.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet">
+<meta name="description" content="Shtark Studio entwickelt Mobile Apps, Web-Plattformen und digitale Produkte – von der Idee bis zur Veröffentlichung. Eigenentwicklung aus Deutschland.">
+<link rel="canonical" href="https://shtarkstudio.eu/">
+<link rel="icon" type="image/png" href="shtarkstudio.png">
+<meta name="theme-color" content="#04060D">
+
+<meta property="og:site_name" content="Shtark Studio">
+<meta property="og:title" content="Shtark Studio — Apps. ASIC Mining. Performance.">
+<meta property="og:description" content="Mobile Apps, Web-Plattformen & digitale Produkte — entwickelt mit Präzision, ausgeliefert mit Persönlichkeit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shtarkstudio.eu/">
+<meta property="og:image" content="https://shtarkstudio.eu/shtarkstudio_banner.png">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shtark Studio — Apps. ASIC Mining. Performance.">
+<meta name="twitter:description" content="Mobile Apps, Web-Plattformen & digitale Produkte — entwickelt mit Präzision, ausgeliefert mit Persönlichkeit.">
+<meta name="twitter:image" content="https://shtarkstudio.eu/shtarkstudio_banner.png">
+
 <style>
+@font-face{font-family:'Orbitron';font-style:normal;font-weight:400 900;font-display:swap;src:url('fonts/orbitron.woff2') format('woff2');}
+@font-face{font-family:'Exo 2';font-style:normal;font-weight:300 600;font-display:swap;src:url('fonts/exo2.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/spacemono-regular.woff2') format('woff2');}
+@font-face{font-family:'Space Mono';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/spacemono-bold.woff2') format('woff2');}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
   --bg:#04060D;
@@ -65,6 +83,18 @@ nav{
   transition:all 0.2s!important;box-shadow:0 0 20px rgba(30,111,255,0.2);
 }
 .nav-cta:hover{box-shadow:0 0 30px rgba(30,111,255,0.45)!important;transform:translateY(-1px);}
+
+.nav-toggle{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:36px;height:36px;background:transparent;border:none;cursor:pointer;padding:0;
+}
+.nav-toggle span{
+  width:24px;height:2px;background:var(--silver2);border-radius:1px;
+  transition:transform 0.25s,opacity 0.25s;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* ── HERO ── */
 .hero{
@@ -281,14 +311,6 @@ nav{
 }
 .pcard-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;}
 
-.pcard-arrow{
-  width:30px;height:30px;background:rgba(30,111,255,0.08);
-  border-radius:7px;display:grid;place-items:center;
-  color:var(--blue2);font-size:0.85rem;
-  opacity:0;transition:opacity 0.2s,transform 0.2s;flex-shrink:0;
-}
-.pcard:hover .pcard-arrow{opacity:1;transform:translate(2px,-2px);}
-
 .ptag{
   display:inline-flex;align-items:center;gap:0.3rem;
   font-family:'Space Mono',monospace;
@@ -341,6 +363,21 @@ nav{
   min-height:200px;
 }
 .feat-visual svg{width:100%;height:100%;}
+
+/* ── ABOUT ── */
+.about-wrap{display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;}
+.about-avatar{
+  width:96px;height:96px;flex-shrink:0;border-radius:50%;
+  background:linear-gradient(135deg,#1E6FFF,#0A40CC);
+  display:grid;place-items:center;
+  font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:700;color:#fff;
+  letter-spacing:0.05em;
+  box-shadow:0 0 30px rgba(30,111,255,0.35),inset 0 1px 0 rgba(255,255,255,0.15);
+  border:1px solid rgba(100,160,255,0.3);
+}
+.about-body{flex:1;min-width:260px;}
+.about-body p{color:var(--muted);line-height:1.75;margin-bottom:1rem;max-width:640px;}
+.about-body p:last-child{margin-bottom:0;}
 
 /* ── SERVICES ── */
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;}
@@ -430,7 +467,20 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
 @media(max-width:900px){
   .pcard-feat,.pcard-half,.pcard-third{grid-column:1/-1;}
   .pcard-feat .feat-inner{grid-template-columns:1fr;}
-  .nav-links{display:none;}
+  .nav-toggle{display:flex;}
+  .nav-links{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(4,6,13,0.97);backdrop-filter:blur(24px);
+    border-bottom:1px solid rgba(30,111,255,0.15);
+    padding:0.5rem 2.5rem 1.5rem;
+    opacity:0;transform:translateY(-12px);pointer-events:none;
+    transition:opacity 0.25s,transform 0.25s;
+  }
+  .nav-links.open{opacity:1;transform:translateY(0);pointer-events:auto;}
+  .nav-links li{width:100%;}
+  .nav-links a{display:block;padding:0.85rem 0;}
+  .nav-links .nav-cta{display:inline-flex;margin:0.5rem 0 0.75rem;}
   .stat-item{border-right:none;border-bottom:1px solid var(--border);}
   .stat-item:last-child{border-bottom:none;}
   footer{flex-direction:column;gap:1rem;text-align:center;}
@@ -449,8 +499,12 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
     <img src="shtarkstudio.png" alt="Shtark Studio Logo">
     <span class="nav-logo-text">SHTARK<span>STUDIO</span></span>
   </a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="#projects">Projekte</a></li>
+    <li><a href="#about">Über uns</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#tech">Tech</a></li>
     <li><a href="#contact" class="nav-cta">Kontakt</a></li>
@@ -468,7 +522,7 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
 
   <div class="hero-badge">
     <span class="badge-dot"></span>
-    5 Apps live · Verfügbar für neue Projekte
+    5 Apps in Entwicklung · Verfügbar für neue Projekte
   </div>
 
   <h1>
@@ -492,7 +546,7 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
 <div class="stats-bar">
   <div class="stat-item">
     <div class="stat-num">5<span>+</span></div>
-    <div class="stat-label">Veröffentlichte Apps</div>
+    <div class="stat-label">Entwickelte Apps</div>
   </div>
   <div class="stat-item">
     <div class="stat-num">4</div>
@@ -527,7 +581,6 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
           <div style="display:flex;flex-direction:column;gap:1rem;height:100%;">
             <div class="pcard-head">
               <div class="pcard-emoji">📈</div>
-              <div class="pcard-arrow">↗</div>
             </div>
             <div style="display:flex;gap:0.4rem;flex-wrap:wrap;">
               <span class="ptag ptag-web">Web · SaaS</span>
@@ -598,7 +651,6 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
       <div class="pcard pcard-third reveal" style="grid-column:span 4;">
         <div class="pcard-head">
           <div class="pcard-emoji">🏠</div>
-          <div class="pcard-arrow">↗</div>
         </div>
         <span class="ptag ptag-finance">Mobile · Finanzen</span>
         <h3>ImmoPilot</h3>
@@ -620,7 +672,6 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
       <div class="pcard pcard-half reveal">
         <div class="pcard-head">
           <div class="pcard-emoji">💰</div>
-          <div class="pcard-arrow">↗</div>
         </div>
         <span class="ptag ptag-finance">Mobile · Finanzen</span>
         <h3>Haushaltskasse</h3>
@@ -637,7 +688,6 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
       <div class="pcard pcard-half reveal">
         <div class="pcard-head">
           <div class="pcard-emoji">📅</div>
-          <div class="pcard-arrow">↗</div>
         </div>
         <span class="ptag ptag-mobile">Mobile · Produktivität</span>
         <h3>PlanIt</h3>
@@ -656,7 +706,6 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
           <div style="display:flex;flex-direction:column;gap:1rem;height:100%;">
             <div class="pcard-head">
               <div class="pcard-emoji">🪰</div>
-              <div class="pcard-arrow">↗</div>
             </div>
             <span class="ptag ptag-game">Mobile · Arcade Game</span>
             <h3>Fliegenklatsche</h3>
@@ -743,6 +792,24 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<div class="glitch-divider"></div>
+
+<!-- ══ ABOUT ══ -->
+<div class="section-outer alt" id="about">
+  <div class="section-inner">
+    <div class="about-wrap reveal">
+      <div class="about-avatar">RB</div>
+      <div class="about-body">
+        <p class="section-eyebrow">Über uns</p>
+        <h2 class="section-title">Ein Entwickler, fünf Produkte</h2>
+        <p>Shtark Studio ist die Einzelunternehmung von Raphael Binder, gegründet in Kirchberg/Jagst, Deutschland. Kein Team, keine Umwege — von der ersten Idee bis zum fertigen Produkt entsteht hier alles aus einer Hand: Design, Entwicklung, Backend, Veröffentlichung.</p>
+        <p>Der Fokus liegt auf React Native & Expo für Mobile Apps sowie Next.js für Web-Plattformen — ergänzt durch ein zweites Standbein im ASIC-Mining-Bereich, wo Hardware-Performance genauso zählt wie guter Code.</p>
+        <p>Pragmatisch, direkt und ohne Agentur-Overhead: Anfragen werden persönlich beantwortet, Projekte persönlich umgesetzt.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -840,12 +907,12 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
 <footer>
   <a href="#" class="footer-logo">
     <img src="shtarkstudio.png" alt="Shtark Studio">
-    <p style="color:var(--muted);font-size:0.78rem;font-family:'Exo 2',sans-serif;">© 2025 Shtark Studio</p>
+    <p style="color:var(--muted);font-size:0.78rem;font-family:'Exo 2',sans-serif;">© 2026 Shtark Studio</p>
   </a>
   <p>Registered in Germany · shtarkstudio.eu</p>
   <ul class="footer-links">
-    <li><a href="#">Impressum</a></li>
-    <li><a href="#">Datenschutz</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
   </ul>
 </footer>
 
@@ -953,6 +1020,27 @@ document.querySelectorAll('.pcard').forEach(card=>{
     card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
     card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
   });
+});
+
+// ── MOBILE NAV ──
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',()=>{
+  const isOpen=navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded',isOpen?'true':'false');
+});
+navLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+  });
+});
+document.addEventListener('click',e=>{
+  if(!navLinks.classList.contains('open'))return;
+  if(!e.target.closest('nav')){
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded','false');
+  }
 });
 
 // ── SMOOTH SCROLL ──
