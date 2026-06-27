@@ -491,6 +491,20 @@ nav{
 }
 .clink:hover{color:var(--blue2);border-color:rgba(30,111,255,0.4);box-shadow:0 0 20px rgba(30,111,255,0.1);}
 
+.contact-form{position:relative;z-index:1;margin-bottom:2rem;text-align:left;}
+.form-row{display:flex;gap:1rem;flex-wrap:wrap;}
+.form-row input{flex:1;min-width:180px;}
+.contact-form input,.contact-form textarea{
+  width:100%;background:var(--card2);border:1px solid var(--border);
+  border-radius:8px;padding:0.8rem 1rem;color:var(--text);
+  font-family:'Exo 2',sans-serif;font-size:0.9rem;
+  margin-bottom:1rem;resize:vertical;transition:border-color 0.2s;
+}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:rgba(30,111,255,0.5);}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted);}
+.contact-form button.btn-primary{border:none;cursor:pointer;font-family:inherit;width:100%;justify-content:center;}
+.form-hint{font-size:0.72rem;color:var(--dim);margin-top:0.75rem;margin-bottom:0;text-align:center;}
+
 /* ── FOOTER ── */
 footer{
   border-top:1px solid var(--border);padding:2rem 2.5rem;
@@ -971,6 +985,17 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
       <p class="section-eyebrow" style="justify-content:center;margin-bottom:1.5rem;">Kontakt</p>
       <h2>Projekt in Planung?<br>Lass uns reden.</h2>
       <p>Neue Anfragen sind willkommen — egal ob App, Plattform oder etwas ganz anderes.</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Dein Name" required>
+          <input type="email" name="email" placeholder="Deine E-Mail" required>
+        </div>
+        <textarea name="message" placeholder="Was hast du vor?" rows="4" required></textarea>
+        <button type="submit" class="btn-primary">Nachricht senden ›</button>
+        <p class="form-hint">Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht an shtarkstudio@gmail.com.</p>
+      </form>
+
       <div class="contact-links">
         <a href="mailto:shtarkstudio@gmail.com" class="clink">✉️ shtarkstudio@gmail.com</a>
         <a href="https://shtarkstudio.eu" class="clink" target="_blank" rel="noopener">🌐 shtarkstudio.eu</a>
@@ -1096,6 +1121,18 @@ document.querySelectorAll('.pcard').forEach(card=>{
     card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
     card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
   });
+});
+
+// ── CONTACT FORM (mailto) ──
+const contactForm=document.getElementById('contactForm');
+contactForm.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=contactForm.name.value.trim();
+  const email=contactForm.email.value.trim();
+  const message=contactForm.message.value.trim();
+  const subject=`Projektanfrage von ${name}`;
+  const body=`${message}\n\n—\n${name}\n${email}`;
+  window.location.href=`mailto:shtarkstudio@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 
 // ── MOBILE NAV ──
