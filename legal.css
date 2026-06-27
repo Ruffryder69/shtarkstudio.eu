@@ -32,6 +32,16 @@ body{background:var(--bg);color:var(--text);font-family:'Exo 2',sans-serif;font-
   color:var(--blue2);letter-spacing:0.04em;margin:2.5rem 0 0.85rem;
 }
 .legal-main p{color:var(--muted);margin-bottom:0.5rem;}
+.legal-main.center{text-align:center;}
+.legal-main.center h1{margin-bottom:1.25rem;}
+.legal-main.center p{max-width:480px;margin:0 auto 0.75rem;}
+.placeholder-badge{
+  width:64px;height:64px;margin:0 auto 1.5rem;border-radius:18px;
+  background:linear-gradient(135deg,#1E6FFF,#0A40CC);
+  display:grid;place-items:center;font-size:1.6rem;
+  box-shadow:0 0 30px rgba(30,111,255,0.35);
+  border:1px solid rgba(100,160,255,0.3);
+}
 .legal-main a{color:var(--blue2);text-decoration:none;border-bottom:1px solid rgba(77,159,255,0.3);}
 .legal-main a:hover{border-bottom-color:var(--blue2);}
 
