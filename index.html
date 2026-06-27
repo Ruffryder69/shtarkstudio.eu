@@ -409,6 +409,20 @@ nav{
 .about-body p{color:var(--muted);line-height:1.75;margin-bottom:1rem;max-width:640px;}
 .about-body p:last-child{margin-bottom:0;}
 
+/* ── MINING ── */
+.mining-wrap{display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;}
+.mining-icon{
+  width:96px;height:96px;flex-shrink:0;border-radius:24px;
+  background:linear-gradient(135deg,#1E6FFF,#0A40CC);
+  display:grid;place-items:center;font-size:2.2rem;
+  box-shadow:0 0 30px rgba(30,111,255,0.35),inset 0 1px 0 rgba(255,255,255,0.15);
+  border:1px solid rgba(100,160,255,0.3);
+}
+.mining-body{flex:1;min-width:260px;}
+.mining-body p{color:var(--muted);line-height:1.75;margin-bottom:1.25rem;max-width:640px;}
+.mining-body .ptag{margin-right:1rem;}
+.mining-body .btn-ghost{display:inline-flex;margin-top:0.5rem;}
+
 /* ── SERVICES ── */
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;}
 .svc-card{
@@ -540,6 +554,7 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
     <li><a href="#projects">Projekte</a></li>
     <li><a href="#about">Über uns</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#mining">Mining</a></li>
     <li><a href="#tech">Tech</a></li>
     <li><a href="#contact" class="nav-cta">Kontakt</a></li>
     <li class="nav-social">
@@ -897,6 +912,24 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
         <div class="svc-icon">⛏️</div>
         <h4>ASIC Mining</h4>
         <p>Setup, Optimierung und Performance-Monitoring von ASIC-Mining-Hardware. Maximale Effizienz, minimaler Downtime.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="glitch-divider"></div>
+
+<!-- ══ MINING ══ -->
+<div class="section-outer" id="mining">
+  <div class="section-inner">
+    <div class="mining-wrap reveal">
+      <div class="mining-icon">⛏️</div>
+      <div class="mining-body">
+        <p class="section-eyebrow">Krypto Mining</p>
+        <h2 class="section-title">ASIC Mining — Aufbau läuft</h2>
+        <p>Hier entsteht nach und nach ein Einblick in unser eigenes ASIC-Mining-Setup: Hardware-Auswahl, Performance-Optimierung und Effizienz im Dauerbetrieb. Schon in Planung: ein eigener Shop für ausgewählte Mining-Hardware.</p>
+        <span class="ptag ptag-wip">Wird laufend erweitert</span>
+        <a href="#contact" class="btn-ghost">Interesse? Schreib uns ›</a>
       </div>
     </div>
   </div>
