@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shtark Studio — Apps. ASIC Mining. Performance.</title>
+<title>Shtark Studio — Apps. Web. Performance.</title>
 <meta name="description" content="Shtark Studio entwickelt Mobile Apps, Web-Plattformen und digitale Produkte – von der Idee bis zur Veröffentlichung. Eigenentwicklung aus Deutschland.">
 <link rel="canonical" href="https://shtarkstudio.eu/">
 <link rel="icon" type="image/png" href="shtarkstudio.png">
 <meta name="theme-color" content="#04060D">
 
 <meta property="og:site_name" content="Shtark Studio">
-<meta property="og:title" content="Shtark Studio — Apps. ASIC Mining. Performance.">
+<meta property="og:title" content="Shtark Studio — Apps. Web. Performance.">
 <meta property="og:description" content="Mobile Apps, Web-Plattformen & digitale Produkte — entwickelt mit Präzision, ausgeliefert mit Persönlichkeit.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shtarkstudio.eu/">
 <meta property="og:image" content="https://shtarkstudio.eu/shtarkstudio_banner.png">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Shtark Studio — Apps. ASIC Mining. Performance.">
+<meta name="twitter:title" content="Shtark Studio — Apps. Web. Performance.">
 <meta name="twitter:description" content="Mobile Apps, Web-Plattformen & digitale Produkte — entwickelt mit Präzision, ausgeliefert mit Persönlichkeit.">
 <meta name="twitter:image" content="https://shtarkstudio.eu/shtarkstudio_banner.png">
 
@@ -434,20 +434,6 @@ nav{
 .about-body p{color:var(--muted);line-height:1.75;margin-bottom:1rem;max-width:640px;}
 .about-body p:last-child{margin-bottom:0;}
 
-/* ── MINING ── */
-.mining-wrap{display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;}
-.mining-icon{
-  width:96px;height:96px;flex-shrink:0;border-radius:24px;
-  background:linear-gradient(135deg,#1E6FFF,#0A40CC);
-  display:grid;place-items:center;font-size:2.2rem;
-  box-shadow:0 0 30px rgba(30,111,255,0.35),inset 0 1px 0 rgba(255,255,255,0.15);
-  border:1px solid rgba(100,160,255,0.3);
-}
-.mining-body{flex:1;min-width:260px;}
-.mining-body p{color:var(--muted);line-height:1.75;margin-bottom:1.25rem;max-width:640px;}
-.mining-body .ptag{margin-right:1rem;}
-.mining-body .btn-ghost{display:inline-flex;margin-top:0.5rem;}
-
 /* ── SERVICES ── */
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.25rem;}
 .svc-card{
@@ -529,6 +515,7 @@ nav{
 .contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--muted);}
 .contact-form button.btn-primary{border:none;cursor:pointer;font-family:inherit;width:100%;justify-content:center;}
 .form-hint{font-size:0.72rem;color:var(--dim);margin-top:0.75rem;margin-bottom:0;text-align:center;}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
 
 /* ── FOOTER ── */
 footer{
@@ -593,9 +580,7 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
     <li><a href="#projects">Projekte</a></li>
     <li><a href="#about">Über mich</a></li>
     <li><a href="#services">Services</a></li>
-    <li><a href="#mining">Mining</a></li>
     <li><a href="#tech">Tech</a></li>
-    <li><a href="login.html">Login</a></li>
     <li><a href="#contact" class="nav-cta">Kontakt</a></li>
     <li class="nav-social">
       <a href="https://www.youtube.com/@Shtarkstudio" target="_blank" rel="noopener" aria-label="YouTube">
@@ -630,7 +615,7 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
     <span class="h1-blue">DIE BLEIBT.</span>
   </h1>
 
-  <div class="hero-tagline">Apps. ASIC Mining. Performance.</div>
+  <div class="hero-tagline">Apps. Web. Performance.</div>
 
   <p class="hero-sub">
     Mobile Apps, Web-Plattformen & digitale Produkte — entwickelt mit Präzision, ausgeliefert mit Persönlichkeit. Shtark Studio, gegründet in Deutschland.
@@ -947,7 +932,7 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
         <p class="section-eyebrow">Über mich</p>
         <h2 class="section-title">Ein Entwickler, sechs Produkte</h2>
         <p>Shtark Studio ist die Einzelunternehmung von Raphael Binder, gegründet in Kirchberg/Jagst, Deutschland. Kein Team, keine Umwege — von der ersten Idee bis zum fertigen Produkt entsteht hier alles aus einer Hand: Design, Entwicklung, Backend, Veröffentlichung.</p>
-        <p>Der Fokus liegt auf React Native & Expo für Mobile Apps sowie Next.js für Web-Plattformen — ergänzt durch ein zweites Standbein im ASIC-Mining-Bereich, wo Hardware-Performance genauso zählt wie guter Code.</p>
+        <p>Der Fokus liegt auf React Native & Expo für Mobile Apps sowie Next.js für Web-Plattformen — pragmatisch umgesetzt, mit Fokus auf sauberen Code und guter Performance.</p>
         <p>Pragmatisch, direkt und ohne Agentur-Overhead: Anfragen werden persönlich beantwortet, Projekte persönlich umgesetzt.</p>
       </div>
     </div>
@@ -989,29 +974,6 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
         <div class="svc-icon">🤖</div>
         <h4>KI-Features</h4>
         <p>Integration von LLMs in bestehende Produkte — Anthropic SDK, strukturierte Outputs, smarte Assistenten.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-icon">⛏️</div>
-        <h4>ASIC Mining</h4>
-        <p>Setup, Optimierung und Performance-Monitoring von ASIC-Mining-Hardware. Maximale Effizienz, minimaler Downtime.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="glitch-divider"></div>
-
-<!-- ══ MINING ══ -->
-<div class="section-outer" id="mining">
-  <div class="section-inner">
-    <div class="mining-wrap reveal">
-      <div class="mining-icon">⛏️</div>
-      <div class="mining-body">
-        <p class="section-eyebrow">Krypto Mining</p>
-        <h2 class="section-title">ASIC Mining — Aufbau läuft</h2>
-        <p>Hier entsteht nach und nach ein Einblick in mein eigenes ASIC-Mining-Setup: Hardware-Auswahl, Performance-Optimierung und Effizienz im Dauerbetrieb. Schon in Planung: ein eigener Shop für ausgewählte Mining-Hardware.</p>
-        <span class="ptag ptag-wip">Wird laufend erweitert</span>
-        <a href="#contact" class="btn-ghost">Interesse? Schreib mir ›</a>
       </div>
     </div>
   </div>
@@ -1060,8 +1022,9 @@ footer p{font-size:0.75rem;color:var(--dim);font-family:'Space Mono',monospace;}
           <input type="email" name="email" placeholder="Deine E-Mail" required>
         </div>
         <textarea name="message" placeholder="Was hast du vor?" rows="4" required></textarea>
+        <input type="text" name="website" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn-primary">Nachricht senden ›</button>
-        <p class="form-hint">Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht an shtarkstudio@gmail.com.</p>
+        <p class="form-hint" id="formHint">Deine Nachricht geht direkt an shtarkstudio@gmail.com.</p>
       </form>
 
       <div class="contact-links">
@@ -1191,16 +1154,41 @@ document.querySelectorAll('.pcard').forEach(card=>{
   });
 });
 
-// ── CONTACT FORM (mailto) ──
+// ── CONTACT FORM (direkter Versand via Resend) ──
+const CONTACT_ENDPOINT='https://shtarkstudio-contact.vercel.app/api/contact';
 const contactForm=document.getElementById('contactForm');
-contactForm.addEventListener('submit',e=>{
+const formHint=document.getElementById('formHint');
+const formSubmitBtn=contactForm.querySelector('button[type="submit"]');
+const formHintDefault=formHint.textContent;
+contactForm.addEventListener('submit',async e=>{
   e.preventDefault();
   const name=contactForm.name.value.trim();
   const email=contactForm.email.value.trim();
   const message=contactForm.message.value.trim();
-  const subject=`Projektanfrage von ${name}`;
-  const body=`${message}\n\n—\n${name}\n${email}`;
-  window.location.href=`mailto:shtarkstudio@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const website=contactForm.website.value.trim();
+  formSubmitBtn.disabled=true;
+  formHint.textContent='Wird gesendet …';
+  formHint.style.color='';
+  try{
+    const res=await fetch(CONTACT_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name,email,message,website})
+    });
+    const data=await res.json().catch(()=>({}));
+    if(res.ok && data.ok){
+      contactForm.reset();
+      formHint.textContent='Danke! Deine Nachricht ist angekommen — ich melde mich bald.';
+    }else{
+      throw new Error(data.error||'Unbekannter Fehler');
+    }
+  }catch(err){
+    formHint.textContent='Senden fehlgeschlagen. Schreib mir direkt an shtarkstudio@gmail.com.';
+    formHint.style.color='#ff6b6b';
+  }finally{
+    formSubmitBtn.disabled=false;
+    setTimeout(()=>{formHint.textContent=formHintDefault;formHint.style.color='';},8000);
+  }
 });
 
 // ── MOBILE NAV ──
